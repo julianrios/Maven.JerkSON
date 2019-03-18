@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class ParseBrokenSingleItemTest {
     @Test(expected = ItemParseException.class)
-    public void test1() throws ItemParseException {
+    public void test1() throws Exception {
         // given
         ItemParser itemParser = new ItemParser();
         String valueToParse = "naMe;price:3.23;type:Food;expiration:1/25/2016##";
@@ -17,7 +17,7 @@ public class ParseBrokenSingleItemTest {
     }
 
     @Test(expected = ItemParseException.class)
-    public void test2() throws ItemParseException {
+    public void test2() throws Exception {
         // given
         ItemParser itemParser = new ItemParser();
         String valueToParse = "naMe:eggS;price;type:Food;expiration:1/25/2016##";
@@ -28,7 +28,7 @@ public class ParseBrokenSingleItemTest {
 
 
     @Test(expected = ItemParseException.class)
-    public void test3() throws ItemParseException {
+    public void test3() throws Exception {
         // given
         ItemParser itemParser = new ItemParser();
         String valueToParse = "naMe:teleVision;price:323.5;type;expiration:3/25/2019##";
@@ -40,7 +40,7 @@ public class ParseBrokenSingleItemTest {
 
 
     @Test(expected = ItemParseException.class)
-    public void test4() throws ItemParseException {
+    public void test4() throws Exception {
         // given
         ItemParser itemParser = new ItemParser();
         String valueToParse = "naMe:teleVision;price:323.5;type:electRoniCs;expiration";
