@@ -45,16 +45,17 @@ public class ItemParser {
             price = matchPrice(m.group(4));
             food = m.group(6);
             expiration = m.group(8);
+            return new Item(name, price, food, expiration);
         }
         catch(Exception e) {
             //  Block of code to handle errors
             System.out.println("Invalid Item");
+            throw new ItemParseException();
         }
 //        name = m.group(2);
 //        price = matchPrice(m.group(4));
 //        food = m.group(6);
 //        expiration = m.group(8);
-        return new Item(name, price, food, expiration);
     }
 
 
