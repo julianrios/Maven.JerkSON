@@ -11,6 +11,17 @@ public class GroceryReporter {
 
     @Override
     public String toString() {
+//        String name = "name:    ";
+//
+//        String tabs = " \\t\\t ";
+//        String line = "============= \\t\\t =============\\n";
+//        String seen = "seen: ";
+//        String price = "Price:   ";
+//        String error = "Errors       ";
+//        String times = " times\\n";
+//
+//return null;
+////        return String.format(%)
         return "name:    Milk \t\t seen: 6 times\n" +
                 "============= \t\t =============\n" +
                 "Price: \t 3.23 \t\t seen: 5 times\n" +

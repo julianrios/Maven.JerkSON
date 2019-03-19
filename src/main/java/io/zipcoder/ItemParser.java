@@ -32,38 +32,31 @@ public class ItemParser {
         Pattern p = Pattern.compile(pattern);
 
         Matcher m = p.matcher(singleItem);
+        m.matches();
 
-        System.out.println(m.matches());
-
-        String name = "";
-        Double price = 0.0;
-        String food = "";
-        String expiration = "";
+        String name;
+        Double price;
+        String food;
+        String expiration;
 
         try {
             name = m.group(2);
-            price = matchPrice(m.group(4));
+            price = Double.parseDouble(m.group(4));
             food = m.group(6);
             expiration = m.group(8);
             return new Item(name, price, food, expiration);
         }
         catch(Exception e) {
-            //  Block of code to handle errors
             System.out.println("Invalid Item");
             throw new ItemParseException();
         }
-//        name = m.group(2);
-//        price = matchPrice(m.group(4));
-//        food = m.group(6);
-//        expiration = m.group(8);
     }
 
-
-    public Double matchPrice(String price) throws ItemParseException {
-        Pattern pattern = Pattern.compile("(\\d+\\.\\d{1,2})");
-        if (!pattern.matcher(price).matches()) {
-            throw new ItemParseException();
-        }
-        return Double.parseDouble(price);
-    }
+//    public Double matchPrice(String price) throws ItemParseException {
+//        Pattern pattern = Pattern.compile("(\\d+\\.\\d{1,2})");
+//        if (!pattern.matcher(price).matches()) {
+//            throw new ItemParseException();
+//        }
+//        return Double.parseDouble(price);
+//    }
 }
